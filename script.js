@@ -250,11 +250,11 @@ function animateTimeline() {
         timelineLine.classList.add('animate');
     }
 
-    // Animate each step
+    // Animate each step with staggered timing (150ms intervals)
     timelineSteps.forEach((step, index) => {
         setTimeout(() => {
             step.classList.add('visible');
-        }, index * 200 + 500); // Start after line animation
+        }, index * 150 + 300); // 150ms stagger after initial 300ms delay
     });
 }
 
