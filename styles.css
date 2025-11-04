@@ -437,25 +437,184 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     right: -10%;
-    width: 50%;
+    width: 60%;
     height: 100%;
     z-index: 1;
-    opacity: 0.5;
+    opacity: 0.6;
     pointer-events: none;
+    overflow: hidden;
+}
+
+/* Animated Gradient Overlay */
+.animated-gradient {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(125, 211, 232, 0.15) 0%,
+        rgba(125, 211, 232, 0.08) 25%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 70%
+    );
+    animation: gradientShift 25s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+    33% {
+        transform: translate(-10%, -10%) scale(1.1);
+        opacity: 0.8;
+    }
+    66% {
+        transform: translate(10%, 10%) scale(0.9);
+        opacity: 0.7;
+    }
 }
 
 .geometric-pattern {
+    position: relative;
     width: 100%;
     height: 100%;
-    animation: floatPattern 20s ease-in-out infinite;
+    animation: floatPattern 30s ease-in-out infinite;
+    z-index: 2;
+}
+
+.grid-line {
+    animation: gridPulse 4s ease-in-out infinite;
+}
+
+.grid-line:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.grid-line:nth-child(even) {
+    animation-delay: 1s;
+}
+
+@keyframes gridPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.grid-dot {
+    animation: dotPulse 3s ease-in-out infinite;
+}
+
+.grid-dot:nth-child(2n) {
+    animation-delay: 0.3s;
+}
+
+.grid-dot:nth-child(3n) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        opacity: 0.2;
+        r: 4;
+    }
+    50% {
+        opacity: 0.5;
+        r: 5;
+    }
 }
 
 @keyframes floatPattern {
     0%, 100% {
         transform: translate(0, 0) rotate(0deg);
     }
+    33% {
+        transform: translate(-15px, 15px) rotate(1deg);
+    }
+    66% {
+        transform: translate(15px, -10px) rotate(-1deg);
+    }
+}
+
+/* Floating Geometric Shapes */
+.floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.shape {
+    position: absolute;
+    border: 2px solid var(--color-ternity-blue);
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    right: 30%;
+    border-radius: 50%;
+    animation: float1 20s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 100px;
+    height: 100px;
+    top: 60%;
+    right: 15%;
+    transform: rotate(45deg);
+    animation: float2 25s ease-in-out infinite;
+}
+
+.shape-3 {
+    width: 80px;
+    height: 80px;
+    top: 40%;
+    right: 50%;
+    border-radius: 30%;
+    animation: float3 18s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.1;
+    }
     50% {
-        transform: translate(-20px, 20px) rotate(2deg);
+        transform: translate(-30px, 30px) scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(45deg) scale(1);
+        opacity: 0.08;
+    }
+    50% {
+        transform: translate(20px, -20px) rotate(90deg) scale(1.15);
+        opacity: 0.12;
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.12;
+    }
+    50% {
+        transform: translate(-20px, -30px) scale(0.9);
+        opacity: 0.18;
     }
 }
 
@@ -593,19 +752,76 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     padding: var(--space-lg);
+    background-color: var(--color-almost-white);
+    border-radius: var(--radius-md);
 }
 
 .simple-chart {
     width: 100%;
     height: auto;
+    max-width: 500px;
 }
 
+/* Chart area fills */
+.chart-area {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.chart-area.animate {
+    opacity: 0.3;
+}
+
+/* Chart lines with drawing animation */
 .chart-line {
-    transition: stroke-dashoffset 2s ease;
+    stroke-dashoffset: 500;
+    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .chart-line.animate {
-    stroke-dashoffset: 0 !important;
+    stroke-dashoffset: 0;
+}
+
+.chart-line-1.animate {
+    transition-delay: 0.2s;
+}
+
+.chart-line-2.animate {
+    transition-delay: 0.4s;
+}
+
+/* Chart labels */
+.chart-label-group {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.chart-label-group.animate {
+    opacity: 1;
+}
+
+.chart-label-group:nth-child(1) {
+    transition-delay: 1.2s;
+}
+
+.chart-label-group:nth-child(2) {
+    transition-delay: 1.4s;
+}
+
+/* Gap indicator animation */
+.gap-indicator line,
+.gap-indicator path,
+.gap-indicator rect,
+.gap-indicator text {
+    transition: opacity 0.6s ease;
+}
+
+.gap-indicator.animate line,
+.gap-indicator.animate path,
+.gap-indicator.animate rect,
+.gap-indicator.animate text {
+    opacity: 1 !important;
+    transition-delay: 1.6s;
 }
 
 /* ==========================================================================
@@ -701,85 +917,136 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Meet Haihao Section
+   Team Section
    ========================================================================== */
 
-.haihao-layout {
+.team-intro {
+    margin-bottom: var(--space-xl);
+    max-width: 800px;
+}
+
+.team-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xl);
-    align-items: center;
+    margin-bottom: var(--space-xl);
 }
 
-.haihao-image-side {
-    position: relative;
-}
-
-.image-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.image-placeholder {
-    width: 100%;
-    height: auto;
+.team-member {
+    background-color: var(--color-almost-white);
     border-radius: var(--radius-md);
-    overflow: hidden;
+    padding: var(--space-lg);
     box-shadow: var(--shadow-card);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.image-placeholder img {
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.team-member-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+    border: 4px solid var(--color-ternity-blue);
+    box-shadow: var(--shadow-prominent);
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.team-member:hover .team-member-image {
+    border-color: var(--color-blue-accent);
+    transform: scale(1.05);
+}
+
+.team-member-image img {
     width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(100%);
-    transition: filter var(--transition-normal);
-}
-
-.image-placeholder:hover img {
-    filter: grayscale(0%);
-}
-
-.diagonal-divider {
-    position: absolute;
-    top: 0;
-    right: -20px;
-    width: 2px;
     height: 100%;
-    background-color: var(--color-ternity-blue);
-    transform: rotate(5deg);
-    transform-origin: top;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-normal);
 }
 
-.credentials-list {
-    list-style: none;
-    margin: var(--space-lg) 0;
+.team-member:hover .team-member-image img {
+    transform: scale(1.1);
 }
 
-.credential-item {
+.image-fallback {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-ternity-blue), var(--color-blue-accent));
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    margin-bottom: var(--space-md);
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    justify-content: center;
 }
 
-.credential-item.visible {
-    opacity: 1;
-    transform: translateX(0);
+.initials {
+    font-size: 3rem;
+    font-weight: var(--font-weight-black);
+    color: white;
 }
 
-.credential-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
+.team-member-content {
+    width: 100%;
 }
 
-.credential-text {
+.team-member-name {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-almost-black);
+    margin-bottom: var(--space-xs);
+    line-height: var(--line-height-tight);
+}
+
+.team-member-role {
     font-size: 1.125rem;
+    color: var(--color-ternity-blue);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-md);
+}
+
+.team-member-bio {
+    font-size: 1rem;
+    color: var(--color-text-gray);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-md);
+    text-align: left;
+}
+
+.team-credentials {
+    list-style: none;
+    margin: var(--space-md) 0;
+    text-align: left;
+}
+
+.team-credentials li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
     color: var(--color-dark-gray);
     line-height: var(--line-height-normal);
+}
+
+.credential-check {
+    width: 20px;
+    height: 20px;
+    color: var(--color-ternity-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.team-cta {
+    text-align: center;
+    margin-top: var(--space-lg);
 }
 
 /* ==========================================================================
@@ -1095,14 +1362,18 @@ h1, h2, h3, h4, h5, h6 {
         --space-2xl: 6rem;
     }
 
-    .two-column,
-    .haihao-layout {
+    .two-column {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
 
     .visual-side {
         order: -1;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
 
     .timeline {
@@ -1156,8 +1427,23 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0.3;
     }
 
+    /* Simplify hero background animations on mobile */
+    .floating-shapes {
+        display: none;
+    }
+
+    .animated-gradient {
+        animation: none;
+    }
+
     .hero-ctas {
         flex-direction: column;
+    }
+
+    /* Team members */
+    .team-member-image {
+        width: 150px;
+        height: 150px;
     }
 
     .btn {

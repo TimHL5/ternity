@@ -183,10 +183,13 @@ function animateStats() {
 }
 
 // =============================================================================
-// Chart Line Drawing Animation
+// Chart Line Drawing Animation (Enhanced)
 // =============================================================================
 
 const chartLines = document.querySelectorAll('.chart-line');
+const chartAreas = document.querySelectorAll('.chart-area');
+const chartLabels = document.querySelectorAll('.chart-label-group');
+const gapIndicator = document.querySelector('.gap-indicator');
 let chartAnimated = false;
 
 function animateChart() {
@@ -197,11 +200,33 @@ function animateChart() {
 
     chartAnimated = true;
 
+    // Animate area fills first
+    chartAreas.forEach((area, index) => {
+        setTimeout(() => {
+            area.classList.add('animate');
+        }, index * 200);
+    });
+
+    // Then animate the lines drawing
     chartLines.forEach((line, index) => {
         setTimeout(() => {
             line.classList.add('animate');
-        }, index * 500);
+        }, 400 + (index * 300));
     });
+
+    // Animate labels after lines
+    chartLabels.forEach((label, index) => {
+        setTimeout(() => {
+            label.classList.add('animate');
+        }, 1200 + (index * 200));
+    });
+
+    // Finally animate the gap indicator
+    if (gapIndicator) {
+        setTimeout(() => {
+            gapIndicator.classList.add('animate');
+        }, 1600);
+    }
 }
 
 // =============================================================================
@@ -234,24 +259,31 @@ function animateTimeline() {
 }
 
 // =============================================================================
-// Credentials List Animation
+// Team Member Animation
 // =============================================================================
 
-const credentialItems = document.querySelectorAll('.credential-item');
-let credentialsAnimated = false;
+const teamMembers = document.querySelectorAll('.team-member');
+let teamAnimated = false;
 
-function animateCredentials() {
-    if (credentialsAnimated) return;
+function animateTeam() {
+    if (teamAnimated) return;
 
-    const credentialsList = document.querySelector('.credentials-list');
-    if (!credentialsList || !isInViewport(credentialsList)) return;
+    const teamGrid = document.querySelector('.team-grid');
+    if (!teamGrid || !isInViewport(teamGrid)) return;
 
-    credentialsAnimated = true;
+    teamAnimated = true;
 
-    credentialItems.forEach((item, index) => {
+    teamMembers.forEach((member, index) => {
         setTimeout(() => {
-            item.classList.add('visible');
-        }, index * 150);
+            member.style.opacity = '0';
+            member.style.transform = 'translateY(30px)';
+            member.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(() => {
+                member.style.opacity = '1';
+                member.style.transform = 'translateY(0)';
+            }, 50);
+        }, index * 200);
     });
 }
 
@@ -367,7 +399,7 @@ function handleScroll() {
     animateStats();
     animateChart();
     animateTimeline();
-    animateCredentials();
+    animateTeam();
     handleFloatingCta();
     handleParallax();
 }
@@ -392,7 +424,7 @@ if ('IntersectionObserver' in window) {
     }, observerOptions);
 
     // Observe all sections with animations
-    document.querySelectorAll('.stat-item, .credential-item, .timeline-step').forEach(el => {
+    document.querySelectorAll('.stat-item, .team-member, .timeline-step').forEach(el => {
         observer.observe(el);
     });
 }

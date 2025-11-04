@@ -34,7 +34,7 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#problem" class="nav-link">Challenge</a></li>
                 <li><a href="#solution" class="nav-link">Programs</a></li>
-                <li><a href="#haihao" class="nav-link">About</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
                 <li><a href="#book" class="nav-link cta-nav">Book a Call</a></li>
             </ul>
 
@@ -52,7 +52,7 @@
             <li><a href="#home" class="mobile-link">Home</a></li>
             <li><a href="#problem" class="mobile-link">Challenge</a></li>
             <li><a href="#solution" class="mobile-link">Programs</a></li>
-            <li><a href="#haihao" class="mobile-link">About</a></li>
+            <li><a href="#team" class="mobile-link">Team</a></li>
             <li><a href="#book" class="mobile-link">Book a Call</a></li>
         </ul>
     </div>
@@ -89,6 +89,10 @@
 
             <!-- Background Animation -->
             <div class="hero-background">
+                <!-- Animated Gradient Overlay -->
+                <div class="animated-gradient"></div>
+
+                <!-- Geometric Pattern -->
                 <svg class="geometric-pattern" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -98,35 +102,42 @@
                     </defs>
                     <!-- Grid pattern -->
                     <g class="grid-lines" stroke="url(#grid-gradient)" stroke-width="1" fill="none">
-                        <line x1="0" y1="200" x2="1000" y2="200" />
-                        <line x1="0" y1="400" x2="1000" y2="400" />
-                        <line x1="0" y1="600" x2="1000" y2="600" />
-                        <line x1="0" y1="800" x2="1000" y2="800" />
-                        <line x1="200" y1="0" x2="200" y2="1000" />
-                        <line x1="400" y1="0" x2="400" y2="1000" />
-                        <line x1="600" y1="0" x2="600" y2="1000" />
-                        <line x1="800" y1="0" x2="800" y2="1000" />
+                        <line x1="0" y1="200" x2="1000" y2="200" class="grid-line" />
+                        <line x1="0" y1="400" x2="1000" y2="400" class="grid-line" />
+                        <line x1="0" y1="600" x2="1000" y2="600" class="grid-line" />
+                        <line x1="0" y1="800" x2="1000" y2="800" class="grid-line" />
+                        <line x1="200" y1="0" x2="200" y2="1000" class="grid-line" />
+                        <line x1="400" y1="0" x2="400" y2="1000" class="grid-line" />
+                        <line x1="600" y1="0" x2="600" y2="1000" class="grid-line" />
+                        <line x1="800" y1="0" x2="800" y2="1000" class="grid-line" />
                     </g>
                     <!-- Dots at intersections -->
                     <g class="grid-dots" fill="#7DD3E8" opacity="0.15">
-                        <circle cx="200" cy="200" r="4" />
-                        <circle cx="400" cy="200" r="4" />
-                        <circle cx="600" cy="200" r="4" />
-                        <circle cx="800" cy="200" r="4" />
-                        <circle cx="200" cy="400" r="4" />
-                        <circle cx="400" cy="400" r="4" />
-                        <circle cx="600" cy="400" r="4" />
-                        <circle cx="800" cy="400" r="4" />
-                        <circle cx="200" cy="600" r="4" />
-                        <circle cx="400" cy="600" r="4" />
-                        <circle cx="600" cy="600" r="4" />
-                        <circle cx="800" cy="600" r="4" />
-                        <circle cx="200" cy="800" r="4" />
-                        <circle cx="400" cy="800" r="4" />
-                        <circle cx="600" cy="800" r="4" />
-                        <circle cx="800" cy="800" r="4" />
+                        <circle cx="200" cy="200" r="4" class="grid-dot" />
+                        <circle cx="400" cy="200" r="4" class="grid-dot" />
+                        <circle cx="600" cy="200" r="4" class="grid-dot" />
+                        <circle cx="800" cy="200" r="4" class="grid-dot" />
+                        <circle cx="200" cy="400" r="4" class="grid-dot" />
+                        <circle cx="400" cy="400" r="4" class="grid-dot" />
+                        <circle cx="600" cy="400" r="4" class="grid-dot" />
+                        <circle cx="800" cy="400" r="4" class="grid-dot" />
+                        <circle cx="200" cy="600" r="4" class="grid-dot" />
+                        <circle cx="400" cy="600" r="4" class="grid-dot" />
+                        <circle cx="600" cy="600" r="4" class="grid-dot" />
+                        <circle cx="800" cy="600" r="4" class="grid-dot" />
+                        <circle cx="200" cy="800" r="4" class="grid-dot" />
+                        <circle cx="400" cy="800" r="4" class="grid-dot" />
+                        <circle cx="600" cy="800" r="4" class="grid-dot" />
+                        <circle cx="800" cy="800" r="4" class="grid-dot" />
                     </g>
                 </svg>
+
+                <!-- Floating Geometric Shapes -->
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -161,24 +172,62 @@
 
                 <div class="visual-side">
                     <div class="chart-container">
-                        <svg viewBox="0 0 400 300" class="simple-chart">
+                        <svg viewBox="0 0 450 320" class="simple-chart">
                             <defs>
-                                <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#7DD3E8;stop-opacity:0.3" />
+                                <linearGradient id="chart-gradient-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#7DD3E8;stop-opacity:0.2" />
                                     <stop offset="100%" style="stop-color:#7DD3E8;stop-opacity:0.05" />
                                 </linearGradient>
+                                <linearGradient id="chart-gradient-red" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#F87171;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#F87171;stop-opacity:0.05" />
+                                </linearGradient>
                             </defs>
-                            <!-- Adoption line (going up) -->
-                            <path class="chart-line chart-line-1" d="M 50 250 L 100 220 L 150 180 L 200 140 L 250 90 L 300 50 L 350 30"
-                                  stroke="#7DD3E8" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-                            <!-- Training line (flat/low) -->
-                            <path class="chart-line chart-line-2" d="M 50 250 L 100 245 L 150 240 L 200 235 L 250 230 L 300 228 L 350 225"
-                                  stroke="#F87171" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-                            <!-- Labels -->
-                            <text x="360" y="35" font-size="14" fill="#7DD3E8" font-weight="600">AI Adoption</text>
-                            <text x="360" y="230" font-size="14" fill="#F87171" font-weight="600">Teacher Training</text>
-                            <!-- The Gap -->
-                            <text x="200" y="140" font-size="18" fill="#6B7280" font-weight="700" text-anchor="middle">The Gap</text>
+
+                            <!-- Axis -->
+                            <line x1="40" y1="270" x2="410" y2="270" stroke="#E5E7EB" stroke-width="2"/>
+                            <line x1="40" y1="20" x2="40" y2="270" stroke="#E5E7EB" stroke-width="2"/>
+
+                            <!-- Axis Labels -->
+                            <text x="225" y="300" font-size="12" fill="#9CA3AF" text-anchor="middle" font-weight="500">Time →</text>
+                            <text x="15" y="150" font-size="12" fill="#9CA3AF" text-anchor="middle" font-weight="500" transform="rotate(-90 15 150)">Readiness →</text>
+
+                            <!-- AI Adoption line (going up) - with area fill -->
+                            <path class="chart-area chart-area-1"
+                                  d="M 50 260 L 100 230 L 150 190 L 200 150 L 250 100 L 300 60 L 350 40 L 350 270 L 50 270 Z"
+                                  fill="url(#chart-gradient-blue)" opacity="0.3"/>
+                            <path class="chart-line chart-line-1"
+                                  d="M 50 260 L 100 230 L 150 190 L 200 150 L 250 100 L 300 60 L 350 40"
+                                  stroke="#7DD3E8" stroke-width="3.5" fill="none" stroke-dasharray="500" stroke-dashoffset="500"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+
+                            <!-- Training line (flat/low) - with area fill -->
+                            <path class="chart-area chart-area-2"
+                                  d="M 50 260 L 100 255 L 150 252 L 200 250 L 250 248 L 300 246 L 350 245 L 350 270 L 50 270 Z"
+                                  fill="url(#chart-gradient-red)" opacity="0.3"/>
+                            <path class="chart-line chart-line-2"
+                                  d="M 50 260 L 100 255 L 150 252 L 200 250 L 250 248 L 300 246 L 350 245"
+                                  stroke="#F87171" stroke-width="3.5" fill="none" stroke-dasharray="500" stroke-dashoffset="500"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+
+                            <!-- Labels with background -->
+                            <g class="chart-label-group">
+                                <rect x="358" y="28" width="85" height="24" fill="white" rx="4" opacity="0.95"/>
+                                <text x="400" y="44" font-size="13" fill="#7DD3E8" font-weight="600" text-anchor="middle">AI Adoption</text>
+                            </g>
+                            <g class="chart-label-group">
+                                <rect x="345" y="233" width="100" height="24" fill="white" rx="4" opacity="0.95"/>
+                                <text x="395" y="249" font-size="13" fill="#F87171" font-weight="600" text-anchor="middle">Teacher Training</text>
+                            </g>
+
+                            <!-- The Gap - with arrow and emphasis -->
+                            <g class="gap-indicator">
+                                <line x1="200" y1="155" x2="200" y2="245" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 4" opacity="0"/>
+                                <path d="M 200 160 L 195 170 M 200 160 L 205 170" stroke="#6B7280" stroke-width="2" opacity="0"/>
+                                <path d="M 200 240 L 195 230 M 200 240 L 205 230" stroke="#6B7280" stroke-width="2" opacity="0"/>
+                                <rect x="165" y="188" width="70" height="32" fill="white" rx="6" opacity="0"/>
+                                <text x="200" y="208" font-size="16" fill="#374151" font-weight="700" text-anchor="middle" opacity="0">The Gap</text>
+                            </g>
                         </svg>
                     </div>
                 </div>
@@ -235,53 +284,112 @@
         </div>
     </section>
 
-    <!-- Meet Haihao Section -->
-    <section class="section section-white" id="haihao">
+    <!-- Meet the Team Section -->
+    <section class="section section-white" id="team">
         <div class="container">
-            <div class="haihao-layout">
-                <div class="haihao-image-side">
-                    <div class="image-wrapper">
-                        <div class="image-placeholder">
-                            <!-- Placeholder for Haihao's photo -->
-                            <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="500" fill="#F3F4F6"/>
-                                <text x="200" y="250" text-anchor="middle" font-size="20" fill="#6B7280">
-                                    Photo of Haihao Liu
-                                </text>
-                            </svg>
+            <h2 class="section-headline centered">Meet the Team</h2>
+            <p class="body-text centered team-intro">
+                Our co-founders combine world-class expertise in AI, education, and business to bring you research-backed, implementation-ready programs.
+            </p>
+
+            <div class="team-grid">
+                <!-- Haihao Liu -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="img/haihao.jpeg" alt="Haihao Liu - Co-Founder & Chief Academic Officer"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">
+                            <div class="initials">HL</div>
                         </div>
-                        <div class="diagonal-divider"></div>
+                    </div>
+
+                    <div class="team-member-content">
+                        <h3 class="team-member-name">Haihao Liu</h3>
+                        <p class="team-member-role">Co-Founder & Chief Academic Officer</p>
+
+                        <p class="team-member-bio">
+                            Haihao combines world-class AI expertise from MIT with deep pedagogical knowledge from Harvard. As an AI Safety researcher and former educator, he understands both the technology and the classroom.
+                        </p>
+
+                        <ul class="team-credentials">
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>MIT PhD Researcher - AI & Machine Learning</span>
+                            </li>
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Harvard MEd - Learning Design & Technology</span>
+                            </li>
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>AI Safety Pioneer - BlueDot Impact, AIS Asia</span>
+                            </li>
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Former Educator - 4+ years teaching experience</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="haihao-content-side">
-                    <h2 class="section-headline">Meet Haihao Liu</h2>
+                <!-- Tim Liu -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="img/tim.jpeg" alt="Tim Liu - Co-Founder & Chief Financial Officer"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">
+                            <div class="initials">TL</div>
+                        </div>
+                    </div>
 
-                    <p class="body-text">
-                        Haihao combines world-class AI expertise from MIT with deep pedagogical knowledge from Harvard. As an AI Safety researcher and former educator, he understands both the technology and the classroom.
-                    </p>
+                    <div class="team-member-content">
+                        <h3 class="team-member-name">Tim Liu</h3>
+                        <p class="team-member-role">Co-Founder & Chief Financial Officer</p>
 
-                    <ul class="credentials-list">
-                        <li class="credential-item">
-                            <span class="credential-icon">🎓</span>
-                            <span class="credential-text">MIT PhD Researcher - AI & Machine Learning</span>
-                        </li>
-                        <li class="credential-item">
-                            <span class="credential-icon">📚</span>
-                            <span class="credential-text">Harvard MEd - Learning Design & Technology</span>
-                        </li>
-                        <li class="credential-item">
-                            <span class="credential-icon">🛡️</span>
-                            <span class="credential-text">AI Safety Pioneer - BlueDot, AIS Asia</span>
-                        </li>
-                        <li class="credential-item">
-                            <span class="credential-icon">👨‍🏫</span>
-                            <span class="credential-text">Experienced Educator - 4+ years teaching</span>
-                        </li>
-                    </ul>
+                        <p class="team-member-bio">
+                            Tim brings extensive business and financial expertise, combining strategic leadership with operational excellence. His background in finance, entrepreneurship, and technology consulting enables scalable growth.
+                        </p>
 
-                    <a href="#book" class="btn btn-primary">Book a Call</a>
+                        <ul class="team-credentials">
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Boston College - Finance & Entrepreneurship</span>
+                            </li>
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Co-Founder & CFO of MLV</span>
+                            </li>
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>PwC Technology Consulting</span>
+                            </li>
+                            <li>
+                                <svg class="credential-check" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Strategic Leadership & Operations</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+
+            <div class="team-cta">
+                <a href="#book" class="btn btn-primary">Book a Call with Our Team</a>
             </div>
         </div>
     </section>
@@ -416,7 +524,7 @@
                     <a href="#home">Home</a>
                     <a href="#problem">Challenge</a>
                     <a href="#solution">Programs</a>
-                    <a href="#haihao">About</a>
+                    <a href="#team">Team</a>
                     <a href="#book">Contact</a>
                 </nav>
 
