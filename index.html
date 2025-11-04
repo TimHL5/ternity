@@ -1,496 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Education for the 22ⁿᵈ century">
-        <meta name="keywords" content="Ternity Education, Ternity Edu, ternityedu">
-        <meta name="author" content="Haihao Liu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research-backed AI safety and literacy programs trusted by international schools across Asia-Pacific. Education for the 22nd Century.">
+    <meta name="keywords" content="AI education, AI literacy, AI safety, teacher training, student curriculum, education technology">
+    <meta name="author" content="Haihao Liu">
 
-        <link rel="stylesheet" href="shared.css"/>
-        <link rel="stylesheet" href="index.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-        <script src="shared.js" defer></script>
-        <script src="index.js" defer></script>
-        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-        
-        <!-- Icon Sources -->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Ternity Education | Education for the 22nd Century</title>
 
-        <title>Home | Ternity Education</title>
-    </head>
-    <body>
-        <!-- Go to Top Button -->
-        <button title="Go to Top" id="myBtn" onclick="topFunction()">
-            <ion-icon name="arrow-up-outline" class="up-icon"></ion-icon>
-        </button>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 
-        <!-- Navbar -->
-        <nav>
-            <a href="index.html"><img src="img/header_logo.svg" alt="logo" class="logo"></a>
-            
-            <ul class = "nav-links">
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <img src="img/header_logo.svg" alt="Ternity Education" class="logo">
+            </a>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#consult" class="nav-link">Consult</a></li>
-                <li><a href="#tutor" class="nav-link">Tutor</a></li>
-                <li><a href="#community" class="nav-link">Community</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#problem" class="nav-link">Challenge</a></li>
+                <li><a href="#solution" class="nav-link">Programs</a></li>
+                <li><a href="#haihao" class="nav-link">About</a></li>
+                <li><a href="#book" class="nav-link cta-nav">Book a Call</a></li>
             </ul>
-            
-            <div class="lang-sel">
-                <div class="curr-lang">EN</div>
-                <div class="lang-opts">
-                    <a href="index_cn.html">简</a>
-                    <a href="index_hk.html">繁</a>
-                </div>
-            </div>
 
-            <button id="burger-menu">
-                <ion-icon class="bars" name="menu-outline"></ion-icon>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-        </nav>
-
-        <!-- Hero Section -->
-        <section class = "hero" id = "home">
-            <div class = "hero-container">
-                <video width="100%" height="100%" autoplay loop muted playsinline>
-                    <source src="herovideo.webm" type="video/webm; codecs=vp9,vorbis">
-                    <source src="herovideo.mp4" type="video/mp4">
-                </video>
-                <div class = "hero-overlay">
-                    <h2>This website is still under construction, please come back later!</h2>
-                    <p>Questions may be directed to <a href="mailto:contact@ternity.education">contact@ternity.education</a></p>
-                </div>
-            </div>
-        </section>
-<!--
-        <!-- About Us section XXX>
-        <section id = "about">
-
-            <div class = "section-title">
-                <h1>About Us</h1>
-            </div>
-
-            <div class="counter-container">
-                <div class="counter-box">
-                    <div class="counter" id="counter1" data-count="20">20</div>
-                    <div class="counter-text">Number of Vessels</div>
-                </div>
-                <div class="counter-box">
-                    <div class="counter" id="counter2" data-count="1921130">1,921,130</div>
-                    <div class="counter-text">Total DWT</div>
-                </div>
-                <div class="counter-box">
-                    <div class="counter" id="counter3" data-count="35">35</div>
-                    <div class="counter-text">Number of Employees</div>
-                </div>
-            </div>
-
-            <div class="about-container">
-                <div class="about">
-                        <img src="img/history-photo.png" alt="About Image">
-                    <div class="about-info">
-                        <h2><img src="img/about-icons/history-fill.svg" alt="History Icon">History</h2>
-                        <p>The Tung Group is a multi-national shipping enterprise founded by the Chinese entre&shy;preneur, the late Mr. C. Y. Tung, more than 80 years ago. The Group has extensive experience in owning, operating, and managing a large diversity of vessels, including especially oil tankers, dry bulk carriers, LPG carriers, container vessels, and passenger ships. With the advent of containerization in 1969, our founder established Orient Overseas Container Line (OOCL) and listed the holding company Orient Over&shy;seas on the Hong Kong Stock Exchange in 1971. The Tung Family remained the major shareholder of Orient Over&shy;seas for almost 45 years until 2018. Over the years, the Group has been recognized as being in the forefront of the development of marine technology and is well known for its innovations in business development. The Group was among the first in pioneering very large crude carriers (VLCC) and was the first to bring container shipping to the Pacific region.</p>
-                    </div>
-                </div>
-                <div class="about">
-                    <img src="img/mission-photo.png" alt="Who we are Image">
-                    <div class="about-info">
-                        <h2><img src="img/about-icons/ship-fill.svg" alt="Who we are Icon">Who We Are</h2>
-                        <p>Island Navigation has represented the Tung Group in the management of building, owning, or operating over 600 commercial vessels including general cargo vessels, tankers (Energy series, CYS series, Brazilian series), bulk carriers (Atlantic series, Pacific series), OBOs, passenger vessels, and LPG vessels. Today, Island Navi&shy;gation Corp&shy;oration Inter&shy;national Limited (INC) continues to represent the Tung Group in the owning and operating of dry bulk carriers and oil tankers. INC is currently active predominantly in the Capesize sector in the dry market, and MR sector in the product tanker market.</p>
-                    </div>
-                </div>
-                <div class="about">
-                    <img src="img/home7.png" alt="Mission Image">
-                    <div class="about-info">
-                        <h2><img src="img/about-icons/compass-fill.svg" alt="Mission Icon">Our Mission</h2>
-                        <p>The shipping industry has undergone decades of turbulent transformation. The business today is more competitive than ever before. Island Navi&shy;gation continues to grow and manage its business by focusing on quality technical and operational management, prudent capital management, and balancing the characteristically opportunistic nature of the wet and dry bulk business together with concerted efforts at niche building and partnership building.The Island Navi&shy;gation Corp&shy;oration group, based in Hong Kong, remains committed to delivering quality services to its customers worldwide.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Partners section XXX>
-        <section id = "partners">
-            <div class = "section-title">
-                <h1>Our Business Partners</h1>
-            </div>
-            
-            <div class="swiper-container">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/abs.png" alt="ABS logo">
-                                    <h4>American Bureau of Shipping</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/asahi.png" alt="Asahi MOL Tankers Logo">
-                                    <h4>Asahi MOL Tankers</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/baowu.png" alt="China Baowu Steel Group Corporation Limited Logo">
-                                    <h4>China Baowu Steel Group Corporation Limited</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/bernhard.png" alt="Bernhard Schulte Ship Management Logo">
-                                    <h4>Bernhard Schulte Ship Management</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/drylog.png" alt="Drylog Limited Logo">
-                                    <h4>Drylog Limited</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/maersk.png" alt="Maersk Tankers A/S Logo">
-                                    <h4>Maersk Tankers A/S</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/osm.png" alt="OSM Thome Logo">
-                                    <h4>OSM Thome</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/smc.png" alt="Schulte Marine Concept Logo">
-                                    <h4>Schulte Marine Concept</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/scorpio.png" alt="Scorpio MR Pool Limited Logo">
-                                    <h4>Scorpio MR Pool Limited</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/ssm.png" alt="Steamship Mutual Management Limited Logo">
-                                    <h4>Steamship Mutual Management Limited</h4>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <div class="slide-card">
-                                    <img src="img/partners/zenith.png" alt="Zenith Gemi İşletmeciliği A.Ş. Logo">
-                                    <h4>Zenith Gemi İşletmeciliği A.Ş.</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
-        <!-- Fleet section XXX>
-        <section id = "fleet">
-            <div class = "section-title">
-                <h1>Fleet Overview</h1>
-            </div>
-
-            <div class="fleetoverview-info">
-                <p>The Island Navigation Group of companies is an owner and operator of dry bulk and tanker vessels, transporting industrial goods such as minerals, ores, petroleum products and chemical products around the world. The Group operates its owned and controlled vessels by way of pooling, period charters, and Contract of Affreightments.
-                </p>
-            </div>
-            <div class="fleet-overview">
-                <div class="overview-card">
-                    <a href="fleet_en.html?type=tanker"><img src="img/fleet/tanker/Island_Express.png" alt="Island Express Ship image" class="overview-img"></a>
-                    <div class="overview-name">
-                        <a href="fleet_en.html?type=tanker"><h4>Tankers</h4></a>
-                    </div>
-                </div>
-                <div class="overview-card">
-                    <a href="fleet_en.html?type=drybulk"><img src="img/fleet/drybulk/Bulk_Geneva.png" alt="Bulk Geneva Ship image" class="overview-img"></a>
-                    <div class="overview-name">
-                        <a href="fleet_en.html?type=drybulk"><h4>Dry Bulk</h4></a>
-                    </div>
-                </div>
-            </div>
-            <a href="fleet_en.html"><h2>See All</h2></a>
-
-        </section>
-        <!-- Customers section XXX>
-        <section id = "community" class="customers">
-            <div class = "section-title">
-                <h1>Our Customers</h1>
-            </div>
-            <div class="customers-info">
-                <p>The Group, based in Hong Kong with a representative office in Tokyo, considers safe technical management and prudent risk management as its priorities.  Ship Management services are conducted through accredited third party ship managers based in Singapore and Turkey. The Group is also mindful of prudency in capital structure, and continues to be conservative in balance sheet management. With over 70 years of history, the objective of the Group continues to be building a sustainable business over the long term, and providing safe and quality transportation services to customers around the world. The Group considers its long term customers and partners a core element of success. 
-                </p>
-            </div>
-            <div class="customer-slider">
-                <div class="customer-slide">
-                    <img src="img/customers/ampol.png" alt="ampol">
-                    <img src="img/customers/baowu.png" alt="baowu">
-                    <img src="img/customers/bhp.png" alt="bhp">
-                    <img src="img/customers/bp.png" alt="bp">
-                    <img src="img/customers/chevron.png" alt="chevron">
-                    <img src="img/customers/cofco.png" alt="cofco">
-                    <img src="img/customers/cosmo.png" alt="cosmo">
-                    <img src="img/customers/eneos.png" alt="eneos">
-                    <img src="img/customers/fmg.png" alt="fmg">
-                    <img src="img/customers/idemitsu.png" alt="idemitsu">
-                    <img src="img/customers/mercuria.png" alt="mercuria">
-                    <img src="img/customers/perochina.png" alt="petrochina">
-                    <img src="img/customers/pmi.png" alt="pmi">
-                    <img src="img/customers/riotinto.png" alt="riotinto">
-                    <img src="img/customers/royhill.png" alt="royhill">
-                    <img src="img/customers/shell.png" alt="shell">
-                    <img src="img/customers/shougang.png" alt="shougang">
-                    <img src="img/customers/sinopec.png" alt="sinopec">
-                    <img src="img/customers/skenergy.png" alt="skenergy">
-                    <img src="img/customers/trafigura.png" alt="trafigura">
-                    <img src="img/customers/vitol.png" alt="vitol">
-                </div>
-                <div class="customer-slide">
-                    <img src="img/customers/ampol.png" alt="ampol">
-                    <img src="img/customers/baowu.png" alt="baowu">
-                    <img src="img/customers/bhp.png" alt="bhp">
-                    <img src="img/customers/bp.png" alt="bp">
-                    <img src="img/customers/chevron.png" alt="chevron">
-                    <img src="img/customers/cofco.png" alt="cofco">
-                    <img src="img/customers/cosmo.png" alt="cosmo">
-                    <img src="img/customers/eneos.png" alt="eneos">
-                    <img src="img/customers/fmg.png" alt="fmg">
-                    <img src="img/customers/idemitsu.png" alt="idemitsu">
-                    <img src="img/customers/mercuria.png" alt="mercuria">
-                    <img src="img/customers/perochina.png" alt="petrochina">
-                    <img src="img/customers/pmi.png" alt="pmi">
-                    <img src="img/customers/riotinto.png" alt="riotinto">
-                    <img src="img/customers/royhill.png" alt="royhill">
-                    <img src="img/customers/shell.png" alt="shell">
-                    <img src="img/customers/shougang.png" alt="shougang">
-                    <img src="img/customers/sinopec.png" alt="sinopec">
-                    <img src="img/customers/skenergy.png" alt="skenergy">
-                    <img src="img/customers/trafigura.png" alt="trafigura">
-                    <img src="img/customers/vitol.png" alt="vitol">
-                </div>
-            </div> 
-        </section>
-
-        <!-- Partnerships section XXX>
-        <section id = "partnerships" class="partnerships">
-            <div class = "section-title">
-                <h1>Partnerships</h1>
-            </div>
-            <div class="memberships-container">
-                    <a href="https://www.bimco.org/"><img src="img/community/bimco.png" alt="Bimco Logo"></a>
-                    <a href="http://www.hksoa.org/"><img src="img/community/hk_shipowners.png" alt="Hong Kong Shipowners Association Logo"></a>
-                    <a href="https://www.intercargo.org/"><img src="img/community/intercargo.png" alt="Intercargo Logo"></a>
-                    <a href="https://www.intertanko.com/"><img src="img/community/intertanko.png" alt="Intertanko Logo"></a>
-                    <a href="https://www.hkmaritimemuseum.org/"><img src="img/community/maritime_museum.png" alt="Hong Kong Maritime Musuem Logo"></a>
-                    <a href="https://lms-icms.polyu.edu.hk/"><img src="img/community/polytechnic.png" alt="Polytechnic University Logo"></a>
-                    <a href="http://seatransport.org/"><img src="img/community/seatransport.png" alt="Sea Transport Logo"></a>
-                    <a href="https://en.sjtu.edu.cn/campus/museums/168"><img src="img/community/shanghai_jiaotong.png" alt="Shanghai Jiaotong University Logo"></a>
-                    <a href="http://tircsod.ouc.edu.cn/main.psp"><img src="img/community/sustainable_ocean.png" alt="Tung Group Sustainable Ocean Logo"></a>
-                    <a href="https://www.worldscale.co.uk/"><img src="img/community/worldscale.png" alt="Worldscale Logo"></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact section XXX>
-        <section id = "contact">
-            <div class = "contact-container">
-                <img src = "img/contact-bg.png" class="contact-bg not-selectable" alt="Contact Background Image">
-                <div class = "contact-overlay"></div>
-                <div class = "address-container">
-                    <h2>Contact Us</h2>
-                    <p>33/F Harbour Centre</p>
-                    <p>25 Harbour Road</p>
-                    <p>Wanchai, Hong Kong</p>
-                </div>
-
-                <div class = contact-details-container>
-                    <div class = "contact-method">
-                        <ion-icon name="time-outline"></ion-icon>
-                        <div class = "contact-details">
-                            <p>Office Hours:</p>
-                            <span>Monday - Friday <br> 09:00 - 18:00</span>
-                        </div>
-                    </div>
-                    <div class = "contact-method">
-                        <ion-icon name="call-outline"></ion-icon>
-                        <div class = "contact-details">
-                            <p>Main Line:</p>
-                            <span>+852 2833 3222</span>
-                        </div>
-                    </div>
-                    <div class = "contact-method">
-                        <ion-icon name="file-tray-full-outline"></ion-icon>
-                        <div class = "contact-details">
-                            <p>Fax:</p>
-                            <span>+852 2827 0001</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <form id="my-form" action="#" method="POST">
-                        <div class="form-control">
-                            <div class = "required-label">
-                                <label for="name">Name
-                                    <span class="required">*</span>
-                                </label>
-                            </div>
-                            <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter Your Name"
-                            class="input-field"
-                            required
-                            autocomplete="name"
-                            />
-                        </div>
-                        <div class="form-control">
-                            <div class = "required-label">
-                                <label for="email">Email
-                                    <span class="required">*</span>
-                                </label>
-                            </div>
-                            <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter Your Email"
-                            class="input-field"
-                            required
-                            autocomplete="email"
-                            />
-                        </div>
-                        <div class="form-control">
-                            <label for="phone">Phone</label>
-                            <input
-                            type="text"
-                            id="phone"
-                            name="phone"
-                            placeholder="Enter Your Phone Number"
-                            class="input-field"
-                            autocomplete="mobile"
-                            ></input>
-                        </div>
-                        <div class="form-control">
-                            <label for="message">Message</label>
-                            <textarea
-                            id="message"
-                            cols="60"
-                            rows="6"
-                            placeholder="Enter Your Message"
-                            name="message"
-                            class="input-field"
-                            ></textarea>
-                        </div>
-                        <input
-                            type="submit"
-                            value="Submit"
-                            id="submit-btn"
-                            class="submit-btn"
-                        />
-                    </form>
-                    <div id="thank-you-message" style="display: none">
-                        <h4>Thank you for reaching out!</h4>
-                        <p>I will get back to you as soon as possible.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Footer XXX>
-        <footer>
-            <ul class = "footer-nav">
-                <li><a href="index_en.html#home">Home</a></li>
-                <li><a href="index_en.html#about">About Us</a></li>
-                <li><a href="index_en.html#partners">Partners</a></li>
-                <li><a href="index_en.html#fleet">Fleet</a></li>
-                <li><a href="index_en.html#community">Community</a></li>
-                <li><a href="index_en.html#contact">Contact Us</a></li>
-            </ul>
-
-            <div class="footer-container">
-                <div class = footer-full-logo>
-                    <img src="img/logo.png" alt="footer-logo" class = "footer-logo"/>
-                    <h1>Island Navigation Corporation International&nbsp;Limited</h1>
-                </div>
-                
-                <div class = socials-container>
-                    <a href="mailto: jaque.liu@isnav.com" target="_blank">
-                        <ion-icon name = "mail" class="socicon"
-                            aria-label="Email">
-                        </ion-icon>
-                    </a>
-                    
-                    <a href="#" target="_blank">
-                        <ion-icon name = "logo-linkedin" class="socicon"
-                            aria-label="LinkedIn">
-                        </ion-icon>
-                    </a>
-                        
-                    <a href="#" target="_blank">
-                        <ion-icon name = "logo-wechat" class="socicon"
-                            aria-label="WeChat">
-                        </ion-icon>
-                    </a>
-    
-                    <a href="#" target="_blank">
-                        <ion-icon name = "logo-youtube" class="socicon"
-                            aria-label="YouTube">
-                        </ion-icon>
-                    </a>
-                </div>
-            </div>
-        </footer>
--->
-        <div class="copyright">
-            Copyright &copy 2023 Ternity Education. All rights reserved.
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    </body>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#problem" class="mobile-link">Challenge</a></li>
+            <li><a href="#solution" class="mobile-link">Programs</a></li>
+            <li><a href="#haihao" class="mobile-link">About</a></li>
+            <li><a href="#book" class="mobile-link">Book a Call</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-tagline">Education for the 22nd Century</p>
+
+                <h1 class="hero-headline">
+                    <span class="line">Prepare Your School</span>
+                    <span class="line">for an AI-Augmented</span>
+                    <span class="line">Future</span>
+                </h1>
+
+                <p class="hero-subheadline">
+                    Research-backed AI safety and literacy programs trusted by international schools across Asia-Pacific. Go beyond ChatGPT—teach students and teachers to thrive with AI responsibly.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#book" class="btn btn-primary">Book a Call with Haihao</a>
+                    <a href="#solution" class="btn-text">View Programs →</a>
+                </div>
+
+                <div class="trust-badges">
+                    <span class="badge">MIT</span>
+                    <span class="badge-divider">|</span>
+                    <span class="badge">Harvard</span>
+                    <span class="badge-divider">|</span>
+                    <span class="badge">Boston College</span>
+                </div>
+            </div>
+
+            <!-- Background Animation -->
+            <div class="hero-background">
+                <svg class="geometric-pattern" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7DD3E8;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#7DD3E8;stop-opacity:0.05" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Grid pattern -->
+                    <g class="grid-lines" stroke="url(#grid-gradient)" stroke-width="1" fill="none">
+                        <line x1="0" y1="200" x2="1000" y2="200" />
+                        <line x1="0" y1="400" x2="1000" y2="400" />
+                        <line x1="0" y1="600" x2="1000" y2="600" />
+                        <line x1="0" y1="800" x2="1000" y2="800" />
+                        <line x1="200" y1="0" x2="200" y2="1000" />
+                        <line x1="400" y1="0" x2="400" y2="1000" />
+                        <line x1="600" y1="0" x2="600" y2="1000" />
+                        <line x1="800" y1="0" x2="800" y2="1000" />
+                    </g>
+                    <!-- Dots at intersections -->
+                    <g class="grid-dots" fill="#7DD3E8" opacity="0.15">
+                        <circle cx="200" cy="200" r="4" />
+                        <circle cx="400" cy="200" r="4" />
+                        <circle cx="600" cy="200" r="4" />
+                        <circle cx="800" cy="200" r="4" />
+                        <circle cx="200" cy="400" r="4" />
+                        <circle cx="400" cy="400" r="4" />
+                        <circle cx="600" cy="400" r="4" />
+                        <circle cx="800" cy="400" r="4" />
+                        <circle cx="200" cy="600" r="4" />
+                        <circle cx="400" cy="600" r="4" />
+                        <circle cx="600" cy="600" r="4" />
+                        <circle cx="800" cy="600" r="4" />
+                        <circle cx="200" cy="800" r="4" />
+                        <circle cx="400" cy="800" r="4" />
+                        <circle cx="600" cy="800" r="4" />
+                        <circle cx="800" cy="800" r="4" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section section-white" id="problem">
+        <div class="container">
+            <div class="two-column">
+                <div class="content-side">
+                    <p class="eyebrow">The Challenge</p>
+                    <h2 class="section-headline">Schools Are Racing to Adopt AI—Without the Training</h2>
+
+                    <p class="body-text">
+                        While 450+ schools in Hong Kong introduced ChatGPT into classrooms, most educators lack the expertise to implement AI safely, ethically, and effectively. Students are using tools they don't understand. Teachers feel overwhelmed. Leaders struggle with policy.
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="89">0</div>
+                            <div class="stat-label">of teachers feel unprepared to teach with AI</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="66">0</div>
+                            <div class="stat-label">of students use AI without understanding limitations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="100">0</div>
+                            <div class="stat-label">of schools need AI policy guidance right now</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-side">
+                    <div class="chart-container">
+                        <svg viewBox="0 0 400 300" class="simple-chart">
+                            <defs>
+                                <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#7DD3E8;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#7DD3E8;stop-opacity:0.05" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Adoption line (going up) -->
+                            <path class="chart-line chart-line-1" d="M 50 250 L 100 220 L 150 180 L 200 140 L 250 90 L 300 50 L 350 30"
+                                  stroke="#7DD3E8" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                            <!-- Training line (flat/low) -->
+                            <path class="chart-line chart-line-2" d="M 50 250 L 100 245 L 150 240 L 200 235 L 250 230 L 300 228 L 350 225"
+                                  stroke="#F87171" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+                            <!-- Labels -->
+                            <text x="360" y="35" font-size="14" fill="#7DD3E8" font-weight="600">AI Adoption</text>
+                            <text x="360" y="230" font-size="14" fill="#F87171" font-weight="600">Teacher Training</text>
+                            <!-- The Gap -->
+                            <text x="200" y="140" font-size="18" fill="#6B7280" font-weight="700" text-anchor="middle">The Gap</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section section-gray" id="solution">
+        <div class="container">
+            <h2 class="section-headline centered">How We're Different</h2>
+
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="solution-card" style="--rotation: -2deg">
+                    <svg class="card-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 4L4 14v10c0 12.15 8.25 23.52 20 26.36C35.75 47.52 44 36.15 44 24V14L24 4z"
+                              stroke="#7DD3E8" stroke-width="2" fill="none" stroke-linejoin="round"/>
+                        <path d="M15 24l6 6 12-12" stroke="#7DD3E8" stroke-width="2" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 class="card-title">Teacher Professional Development</h3>
+                    <p class="card-description">16-hour certification program combining AI fundamentals, pedagogical strategies, and hands-on implementation.</p>
+                    <a href="#book" class="card-link">Learn More →</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="solution-card" style="--rotation: 2deg">
+                    <svg class="card-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="12" width="32" height="28" rx="2" stroke="#7DD3E8" stroke-width="2" fill="none"/>
+                        <path d="M8 20h32M16 12v-4M32 12v-4" stroke="#7DD3E8" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="28" r="1.5" fill="#7DD3E8"/>
+                        <circle cx="24" cy="28" r="1.5" fill="#7DD3E8"/>
+                        <circle cx="32" cy="28" r="1.5" fill="#7DD3E8"/>
+                    </svg>
+                    <h3 class="card-title">Student AI Literacy Curriculum</h3>
+                    <p class="card-description">Age-appropriate, hands-on modules teaching ethical AI use, critical thinking, and creative collaboration.</p>
+                    <a href="#book" class="card-link">Learn More →</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="solution-card" style="--rotation: -1deg">
+                    <svg class="card-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8h24v32H12z" stroke="#7DD3E8" stroke-width="2" fill="none"/>
+                        <path d="M16 16h16M16 24h16M16 32h12" stroke="#7DD3E8" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M36 12l6 6-6 6" stroke="#7DD3E8" stroke-width="2" fill="none"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 class="card-title">School AI Policy Consulting</h3>
+                    <p class="card-description">Custom implementation roadmap, safety protocols, and ongoing support for school-wide AI integration.</p>
+                    <a href="#book" class="card-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Haihao Section -->
+    <section class="section section-white" id="haihao">
+        <div class="container">
+            <div class="haihao-layout">
+                <div class="haihao-image-side">
+                    <div class="image-wrapper">
+                        <div class="image-placeholder">
+                            <!-- Placeholder for Haihao's photo -->
+                            <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="500" fill="#F3F4F6"/>
+                                <text x="200" y="250" text-anchor="middle" font-size="20" fill="#6B7280">
+                                    Photo of Haihao Liu
+                                </text>
+                            </svg>
+                        </div>
+                        <div class="diagonal-divider"></div>
+                    </div>
+                </div>
+
+                <div class="haihao-content-side">
+                    <h2 class="section-headline">Meet Haihao Liu</h2>
+
+                    <p class="body-text">
+                        Haihao combines world-class AI expertise from MIT with deep pedagogical knowledge from Harvard. As an AI Safety researcher and former educator, he understands both the technology and the classroom.
+                    </p>
+
+                    <ul class="credentials-list">
+                        <li class="credential-item">
+                            <span class="credential-icon">🎓</span>
+                            <span class="credential-text">MIT PhD Researcher - AI & Machine Learning</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-icon">📚</span>
+                            <span class="credential-text">Harvard MEd - Learning Design & Technology</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-icon">🛡️</span>
+                            <span class="credential-text">AI Safety Pioneer - BlueDot, AIS Asia</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-icon">👨‍🏫</span>
+                            <span class="credential-text">Experienced Educator - 4+ years teaching</span>
+                        </li>
+                    </ul>
+
+                    <a href="#book" class="btn btn-primary">Book a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section section-gray" id="process">
+        <div class="container">
+            <h2 class="section-headline centered">Your Path to AI-Ready</h2>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="12" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M8 20h32M16 12v-4M32 12v-4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Discovery Call</h3>
+                    <p class="step-description">Free 30-minute consultation. We discuss your needs, challenges, and goals.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 8h24v32H12z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M16 16h16M16 24h16M16 32h12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Custom Proposal</h3>
+                    <p class="step-description">Tailored program design matching your budget, timeline, and outcomes.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M8 22h32" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="40" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Program Delivery</h3>
+                    <p class="step-description">Engaging training and implementation. Teachers learn, students explore.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8c-8.8 0-16 7.2-16 16s7.2 16 16 16" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M24 40c8.8 0 16-7.2 16-16s-7.2-16-16-16" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Ongoing Support</h3>
+                    <p class="step-description">Monthly check-ins, content updates, and community access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA / Booking Section -->
+    <section class="section section-white" id="book">
+        <div class="container">
+            <div class="booking-container">
+                <h2 class="section-headline centered">Ready to Transform Your School's AI Future?</h2>
+                <p class="body-text centered booking-subheadline">
+                    Book a free 30-minute strategy call with Haihao. No obligation, just expert guidance.
+                </p>
+
+                <div class="booking-form-wrapper">
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@school.edu">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="school">School Name <span class="required">*</span></label>
+                            <input type="text" id="school" name="school" required placeholder="Your school or organization">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">Your Role</label>
+                            <select id="role" name="role">
+                                <option value="">Select your role</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="admin">Administrator</option>
+                                <option value="principal">Principal/Head of School</option>
+                                <option value="coordinator">Program Coordinator</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">What brings you here?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your school's AI education needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Schedule Free Consultation</button>
+
+                        <p class="form-note">
+                            Limited availability: 3 slots left this month
+                        </p>
+                    </form>
+
+                    <div class="booking-alternative">
+                        <p>Prefer email? <a href="mailto:hello@ternity.education">hello@ternity.education</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-section">
+                    <img src="img/header_logo.svg" alt="Ternity Education" class="footer-logo">
+                </div>
+
+                <nav class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#problem">Challenge</a>
+                    <a href="#solution">Programs</a>
+                    <a href="#haihao">About</a>
+                    <a href="#book">Contact</a>
+                </nav>
+
+                <div class="footer-contact">
+                    <a href="https://www.linkedin.com/company/ternity-education" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+                    <a href="mailto:hello@ternity.education" class="social-link">hello@ternity.education</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ternity Education</p>
+                <p>Hong Kong | Singapore</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA (appears after scrolling) -->
+    <div class="floating-cta" id="floatingCta">
+        <a href="#book" class="btn btn-primary btn-floating">Talk to Haihao</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
 </html>
