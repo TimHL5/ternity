@@ -157,6 +157,89 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-gray {
     background-color: var(--color-light-gray);
+    position: relative;
+}
+
+/* Neural Network Grid Pattern for Gray Sections */
+.section-gray::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(125, 211, 232, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 211, 232, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-gray > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Floating Geometric Shapes for Sections */
+.section-with-shapes {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-with-shapes::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(125, 211, 232, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatShape1 15s ease-in-out infinite;
+}
+
+.section-with-shapes::before {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 8%;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(125, 211, 232, 0.06);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+    animation: floatShape2 18s ease-in-out infinite;
+}
+
+@keyframes floatShape1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-20px, 30px) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes floatShape2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(25px, -20px) rotate(225deg);
+        opacity: 0.7;
+    }
+}
+
+.section-with-shapes > .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* ==========================================================================
@@ -239,10 +322,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link.cta-nav {
-    background-color: var(--color-ternity-blue);
-    color: white;
+    background: linear-gradient(135deg, #7DD3E8 0%, #B8E6F2 50%, #FFFFFF 100%);
+    color: #1F2937;
     padding: var(--space-xs) var(--space-md);
     border-radius: var(--radius-pill);
+    border: 1px solid rgba(125, 211, 232, 0.3);
 }
 
 .nav-link.cta-nav::after {
@@ -250,9 +334,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link.cta-nav:hover {
-    background-color: var(--color-blue-accent);
+    background: linear-gradient(135deg, #5BC4DE 0%, #7DD3E8 50%, #E6F7FB 100%);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-prominent);
+    box-shadow: 0 8px 20px rgba(125, 211, 232, 0.3);
 }
 
 /* Mobile Menu Button */
@@ -443,6 +527,42 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.6;
     pointer-events: none;
     overflow: hidden;
+}
+
+/* Neural Network Diagonal Line Pattern */
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(125, 211, 232, 0.05) 40px,
+        rgba(125, 211, 232, 0.05) 42px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(125, 211, 232, 0.03) 40px,
+        rgba(125, 211, 232, 0.03) 42px
+    );
+    z-index: 0;
+    opacity: 0.8;
+    animation: patternShift 20s linear infinite;
+}
+
+@keyframes patternShift {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(40px) translateY(40px);
+    }
 }
 
 /* Animated Gradient Overlay */
@@ -762,15 +882,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--color-ternity-blue);
-    color: white;
+    background: linear-gradient(135deg, #7DD3E8 0%, #B8E6F2 50%, #FFFFFF 100%);
+    color: #1F2937;
     box-shadow: var(--shadow-card);
+    border: 1px solid rgba(125, 211, 232, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-blue-accent);
+    background: linear-gradient(135deg, #5BC4DE 0%, #7DD3E8 50%, #E6F7FB 100%);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 8px 20px rgba(125, 211, 232, 0.3);
 }
 
 .btn-primary:active {
@@ -827,7 +948,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--font-size-small);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-ternity-blue);
+    background: linear-gradient(135deg, #7DD3E8 0%, #5BC4DE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--space-sm);
 }
@@ -971,6 +1095,28 @@ h1, h2, h3, h4, h5, h6 {
     transition: all var(--transition-normal);
     opacity: 0;
     animation: cardFadeIn 0.8s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dot Matrix Pattern for Solution Cards */
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(125, 211, 232, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius-md);
+}
+
+.solution-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .solution-card:nth-child(1) {
@@ -1081,14 +1227,17 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto var(--space-md);
-    border: 4px solid var(--color-ternity-blue);
+    border: 4px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #7DD3E8 0%, #FFFFFF 100%) border-box;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: all var(--transition-normal);
 }
 
 .team-member:hover .team-member-image {
-    border-color: var(--color-blue-accent);
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #5BC4DE 0%, #7DD3E8 50%, #FFFFFF 100%) border-box;
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(125, 211, 232, 0.3);
 }
@@ -1135,7 +1284,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .team-member-role {
     font-size: 1.125rem;
-    color: var(--color-ternity-blue);
+    background: linear-gradient(135deg, #7DD3E8 0%, #5BC4DE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--space-md);
 }
@@ -1578,6 +1730,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .geometric-pattern {
         opacity: 0.2;
+    }
+
+    /* Reduce pattern complexity on mobile for performance */
+    .hero-background::before,
+    .section-gray::before,
+    .solution-card::before,
+    .section-with-shapes::before,
+    .section-with-shapes::after {
+        opacity: 0.3;
+        animation: none;
     }
 
     .hero-ctas {
