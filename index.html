@@ -70,7 +70,7 @@
                 </h1>
 
                 <p class="hero-subheadline">
-                    Research-backed AI safety and literacy programs trusted by international schools across Asia-Pacific. Go beyond ChatGPT—teach students and teachers to thrive with AI responsibly.
+                    Research-backed AI safety and literacy programs trusted by international schools across Asia-Pacific. <strong>Empower your teachers, protect your students, and lead confidently into the AI era.</strong>
                 </p>
 
                 <div class="hero-ctas">
@@ -160,26 +160,40 @@
                 </div>
 
                 <div class="visual-side">
-                    <div class="chart-container">
-                        <svg viewBox="0 0 400 300" class="simple-chart">
-                            <defs>
-                                <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.3" />
-                                    <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:0.05" />
-                                </linearGradient>
-                            </defs>
-                            <!-- Adoption line (going up) -->
-                            <path class="chart-line chart-line-1" d="M 50 250 L 100 220 L 150 180 L 200 140 L 250 90 L 300 50 L 350 30"
-                                  stroke="#87CEEB" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-                            <!-- Training line (flat/low) -->
-                            <path class="chart-line chart-line-2" d="M 50 250 L 100 245 L 150 240 L 200 235 L 250 230 L 300 228 L 350 225"
-                                  stroke="#F87171" stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-                            <!-- Labels -->
-                            <text x="360" y="35" font-size="14" fill="#87CEEB" font-weight="600">AI Adoption</text>
-                            <text x="360" y="230" font-size="14" fill="#F87171" font-weight="600">Teacher Training</text>
-                            <!-- The Gap -->
-                            <text x="200" y="140" font-size="18" fill="#6B7280" font-weight="700" text-anchor="middle">The Gap</text>
-                        </svg>
+                    <div class="gap-visualization">
+                        <div class="gap-chart">
+                            <!-- Y-axis label -->
+                            <div class="y-axis-label">Readiness →</div>
+
+                            <!-- Chart area -->
+                            <div class="chart-container">
+                                <!-- AI Adoption bar -->
+                                <div class="bar-wrapper">
+                                    <div class="bar ai-adoption-bar" data-height="85">
+                                        <div class="bar-fill"></div>
+                                    </div>
+                                    <div class="bar-label">AI Adoption</div>
+                                </div>
+
+                                <!-- Gap indicator -->
+                                <div class="gap-indicator">
+                                    <div class="gap-line"></div>
+                                    <div class="gap-label">The Gap</div>
+                                    <div class="gap-arrow">↕</div>
+                                </div>
+
+                                <!-- Teacher Training bar -->
+                                <div class="bar-wrapper">
+                                    <div class="bar teacher-training-bar" data-height="30">
+                                        <div class="bar-fill"></div>
+                                    </div>
+                                    <div class="bar-label">Teacher Training</div>
+                                </div>
+                            </div>
+
+                            <!-- X-axis label -->
+                            <div class="x-axis-label">Time →</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,13 +258,13 @@
                 <div class="haihao-image-side">
                     <div class="image-wrapper">
                         <div class="image-placeholder">
-                            <!-- Placeholder for Haihao's photo -->
-                            <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="500" fill="#F3F4F6"/>
-                                <text x="200" y="250" text-anchor="middle" font-size="20" fill="#6B7280">
-                                    Photo of Haihao Liu
-                                </text>
-                            </svg>
+                            <img
+                                src="img/haihao.jpeg"
+                                alt="Haihao Liu - CEO & Co-Founder"
+                                loading="lazy"
+                                onload="this.style.opacity=1"
+                                style="opacity: 0; transition: opacity 0.3s;"
+                            >
                         </div>
                         <div class="diagonal-divider"></div>
                     </div>
@@ -302,13 +316,13 @@
                 <div class="haihao-image-side">
                     <div class="image-wrapper">
                         <div class="image-placeholder">
-                            <!-- Placeholder for Tim's photo -->
-                            <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="500" fill="#F3F4F6"/>
-                                <text x="200" y="250" text-anchor="middle" font-size="20" fill="#6B7280">
-                                    Photo of Tim Liu
-                                </text>
-                            </svg>
+                            <img
+                                src="img/tim.jpeg"
+                                alt="Tim Liu - CFO & Co-Founder"
+                                loading="lazy"
+                                onload="this.style.opacity=1"
+                                style="opacity: 0; transition: opacity 0.3s;"
+                            >
                         </div>
                         <div class="diagonal-divider"></div>
                     </div>
@@ -349,8 +363,6 @@
                             View LinkedIn
                         </a>
                     </div>
-
-                    <a href="https://calendly.com/hhliu-ternity" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1.5rem;">Book a Call</a>
                 </div>
             </div>
         </div>
@@ -470,6 +482,64 @@
     <!-- Floating CTA (appears after scrolling) -->
     <div class="floating-cta" id="floatingCta">
         <a href="https://calendly.com/hhliu-ternity" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-floating">Talk to Haihao</a>
+    </div>
+
+    <!-- Neural Network Background Elements -->
+    <div class="neural-background">
+        <!-- Floating geometric shapes -->
+        <div class="neural-shape shape-1"></div>
+        <div class="neural-shape shape-2"></div>
+        <div class="neural-shape shape-3"></div>
+        <div class="neural-shape shape-4"></div>
+
+        <!-- Connected dots network -->
+        <svg class="neural-network" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <g class="neural-nodes">
+                <!-- Top left cluster -->
+                <circle cx="100" cy="100" r="3" class="node" />
+                <circle cx="200" cy="150" r="3" class="node" />
+                <circle cx="150" cy="250" r="3" class="node" />
+                <circle cx="300" cy="200" r="3" class="node" />
+                <circle cx="250" cy="350" r="3" class="node" />
+
+                <!-- Top right cluster -->
+                <circle cx="700" cy="100" r="3" class="node" />
+                <circle cx="800" cy="180" r="3" class="node" />
+                <circle cx="750" cy="280" r="3" class="node" />
+                <circle cx="900" cy="220" r="3" class="node" />
+                <circle cx="850" cy="350" r="3" class="node" />
+
+                <!-- Bottom cluster -->
+                <circle cx="400" cy="600" r="3" class="node" />
+                <circle cx="500" cy="650" r="3" class="node" />
+                <circle cx="450" cy="750" r="3" class="node" />
+                <circle cx="600" cy="700" r="3" class="node" />
+                <circle cx="550" cy="850" r="3" class="node" />
+            </g>
+
+            <g class="neural-connections">
+                <!-- Top left connections -->
+                <line x1="100" y1="100" x2="200" y2="150" class="connection" />
+                <line x1="200" y1="150" x2="150" y2="250" class="connection" />
+                <line x1="200" y1="150" x2="300" y2="200" class="connection" />
+                <line x1="150" y1="250" x2="250" y2="350" class="connection" />
+                <line x1="300" y1="200" x2="250" y2="350" class="connection" />
+
+                <!-- Top right connections -->
+                <line x1="700" y1="100" x2="800" y2="180" class="connection" />
+                <line x1="800" y1="180" x2="750" y2="280" class="connection" />
+                <line x1="800" y1="180" x2="900" y2="220" class="connection" />
+                <line x1="750" y1="280" x2="850" y2="350" class="connection" />
+                <line x1="900" y1="220" x2="850" y2="350" class="connection" />
+
+                <!-- Bottom connections -->
+                <line x1="400" y1="600" x2="500" y2="650" class="connection" />
+                <line x1="500" y1="650" x2="450" y2="750" class="connection" />
+                <line x1="500" y1="650" x2="600" y2="700" class="connection" />
+                <line x1="450" y1="750" x2="550" y2="850" class="connection" />
+                <line x1="600" y1="700" x2="550" y2="850" class="connection" />
+            </g>
+        </svg>
     </div>
 
     <!-- Scripts -->

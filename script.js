@@ -183,24 +183,24 @@ function animateStats() {
 }
 
 // =============================================================================
-// Chart Line Drawing Animation
+// Bar Chart Animation
 // =============================================================================
 
-const chartLines = document.querySelectorAll('.chart-line');
-let chartAnimated = false;
+let barChartAnimated = false;
 
-function animateChart() {
-    if (chartAnimated) return;
+function animateBarChart() {
+    if (barChartAnimated) return;
 
-    const chart = document.querySelector('.simple-chart');
-    if (!chart || !isInViewport(chart)) return;
+    const gapChart = document.querySelector('.gap-visualization');
+    if (!gapChart || !isInViewport(gapChart)) return;
 
-    chartAnimated = true;
+    barChartAnimated = true;
 
-    chartLines.forEach((line, index) => {
+    const bars = document.querySelectorAll('.bar');
+    bars.forEach((bar, index) => {
         setTimeout(() => {
-            line.classList.add('animate');
-        }, index * 500);
+            bar.classList.add('animated');
+        }, index * 300);
     });
 }
 
@@ -365,7 +365,7 @@ function handleMouseMove(e) {
 
 function handleScroll() {
     animateStats();
-    animateChart();
+    animateBarChart();
     animateTimeline();
     animateCredentials();
     handleFloatingCta();
