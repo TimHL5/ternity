@@ -186,32 +186,30 @@ function animateStats() {
 // Gap Visualization Animation
 // =============================================================================
 
-let gapAnimated = false;
+function animateGap() {
+    const bars = document.querySelectorAll('.gap-bar');
 
-function animateGapVisualization() {
-    if (gapAnimated) return;
+    if (!bars.length) return;
 
-    const gapSection = document.querySelector('.gap-visualization-container');
-    if (!gapSection || !isInViewport(gapSection)) return;
-
-    gapAnimated = true;
-
-    const bars = document.querySelectorAll('.bar');
-    const barsContainer = document.querySelector('.bars-container');
-
-    // Animate bars
-    setTimeout(() => {
-        bars.forEach((bar) => {
-            const finalHeight = bar.getAttribute('data-final-height');
-            bar.style.setProperty('--final-height', finalHeight + '%');
-            bar.classList.add('animated');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                bars.forEach(bar => {
+                    const targetHeight = bar.getAttribute('data-height');
+                    const fill = bar.querySelector('.gap-bar-fill');
+                    if (fill) {
+                        fill.style.height = targetHeight + '%';
+                    }
+                    bar.classList.add('animate');
+                });
+                observer.disconnect();
+            }
         });
+    }, { threshold: 0.3 });
 
-        // Animate gap indicator
-        if (barsContainer) {
-            barsContainer.classList.add('animated');
-        }
-    }, 300);
+    if (bars[0]) {
+        observer.observe(bars[0]);
+    }
 }
 
 // =============================================================================
@@ -375,7 +373,6 @@ function handleMouseMove(e) {
 
 function handleScroll() {
     animateStats();
-    animateGapVisualization();
     animateTimeline();
     animateCredentials();
     handleFloatingCta();
@@ -440,6 +437,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if any sections are already in viewport
     handleScroll();
+
+    // Initialize gap animation
+    animateGap();
 
     // Add loaded class to body for CSS transitions
     setTimeout(() => {
