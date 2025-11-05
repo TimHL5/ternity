@@ -600,130 +600,294 @@ sup {
     line-height: var(--line-height-normal);
 }
 
-.gap-visualization {
-    max-width: 600px;
+/* Container */
+.gap-section-wrapper {
+    width: 100%;
+    max-width: 900px;
     margin: 3rem auto;
     padding: 2rem;
 }
 
-.gap-chart {
+.gap-visualization-container {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Chart Area */
+.gap-chart-area {
     position: relative;
+    display: flex;
+    gap: 2rem;
+    min-height: 400px;
+    margin-bottom: 2rem;
+}
+
+/* Y-Axis */
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    min-width: 80px;
 }
 
 .y-axis-label {
     position: absolute;
-    left: -40px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%) rotate(-90deg);
     font-size: 0.875rem;
+    font-weight: 600;
     color: #6B7280;
-    font-weight: 500;
+    white-space: nowrap;
+    transform-origin: center;
 }
 
-.chart-container {
+.y-axis-markers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 40px;
+}
+
+.y-axis-markers span {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    text-align: right;
+}
+
+/* Bars Container */
+.bars-container {
+    flex: 1;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-    height: 300px;
+    gap: 2rem;
     position: relative;
-    border-bottom: 2px solid #E5E7EB;
-    padding: 0 2rem;
+    padding-bottom: 60px;
 }
 
-.bar-wrapper {
+/* Bar Groups */
+.bar-group {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    max-width: 150px;
+}
+
+.bar-background {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(to bottom,
+        rgba(135, 206, 235, 0.05) 0%,
+        rgba(135, 206, 235, 0.1) 100%);
+    border-radius: 12px;
+    position: relative;
+    border: 2px solid #E5E7EB;
 }
 
 .bar {
-    width: 80px;
-    background: #F3F4F6;
-    border-radius: 8px 8px 0 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.bar-fill {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 0%;
-    transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 8px 8px 0 0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: height 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.bar.animated .bar-fill {
-    height: 100%;
+.bar.animated {
+    height: var(--final-height);
 }
 
+.bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg,
+        var(--bar-color-light) 0%,
+        var(--bar-color-dark) 100%);
+}
+
+/* AI Adoption Bar - Blue */
 .ai-adoption-bar {
-    height: 85%;
+    --bar-color-light: #87CEEB;
+    --bar-color-dark: #5B9FBD;
 }
 
-.ai-adoption-bar .bar-fill {
-    background: linear-gradient(180deg, #87CEEB 0%, #6BB6D9 100%);
-}
-
+/* Teacher Training Bar - Red */
 .teacher-training-bar {
-    height: 30%;
+    --bar-color-light: #F87171;
+    --bar-color-dark: #DC2626;
 }
 
-.teacher-training-bar .bar-fill {
-    background: linear-gradient(180deg, #F87171 0%, #EF4444 100%);
+.bar-value {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #053B61;
+    opacity: 0;
+    transition: opacity 0.5s ease 2s;
+}
+
+.bar.animated .bar-value {
+    opacity: 1;
 }
 
 .bar-label {
-    font-size: 0.95rem;
-    color: #053B61;
-    font-weight: 600;
-    text-align: center;
-}
-
-.gap-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100px;
-}
-
-.gap-line {
-    width: 2px;
-    height: 150px;
-    background: repeating-linear-gradient(
-        to bottom,
-        #6B7280 0px,
-        #6B7280 8px,
-        transparent 8px,
-        transparent 16px
-    );
-}
-
-.gap-label {
-    position: absolute;
     font-size: 1rem;
     font-weight: 700;
     color: #053B61;
-    background: white;
-    padding: 0.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
-.gap-arrow {
-    font-size: 1.5rem;
+.bar-sublabel {
+    font-size: 0.875rem;
     color: #6B7280;
+    text-align: center;
+}
+
+/* Gap Indicator */
+.gap-indicator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 120px;
+    margin: 0 1rem;
+}
+
+.gap-bracket-top,
+.gap-bracket-bottom {
+    width: 60px;
+    height: 20px;
+    border: 3px solid #F59E0B;
+    opacity: 0;
+    transition: opacity 0.5s ease 2.5s;
+}
+
+.gap-bracket-top {
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.gap-bracket-bottom {
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.bars-container.animated .gap-bracket-top,
+.bars-container.animated .gap-bracket-bottom {
+    opacity: 1;
+}
+
+.gap-vertical-line {
+    width: 3px;
+    height: 80px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #F59E0B 0px,
+        #F59E0B 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease 2.5s;
+}
+
+.bars-container.animated .gap-vertical-line {
+    opacity: 1;
+}
+
+.gap-label-box {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 3px solid #F59E0B;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+    text-align: center;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.5s;
+}
+
+.bars-container.animated .gap-label-box {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gap-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.gap-text {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #053B61;
+    margin-bottom: 0.25rem;
+}
+
+.gap-stat {
+    font-size: 0.875rem;
+    color: #F59E0B;
+    font-weight: 600;
+}
+
+/* X-Axis */
+.x-axis {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    right: 0;
+}
+
+.x-axis-line {
+    height: 2px;
+    background: #E5E7EB;
+    margin-bottom: 0.5rem;
 }
 
 .x-axis-label {
     text-align: center;
-    margin-top: 1rem;
     font-size: 0.875rem;
+    font-weight: 600;
     color: #6B7280;
-    font-weight: 500;
+}
+
+/* Impact Statement */
+.gap-impact-statement {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #6B7280;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(135, 206, 235, 0.05), rgba(248, 113, 113, 0.05));
+    border-radius: 12px;
+    border-left: 4px solid #F59E0B;
+}
+
+.gap-impact-statement strong {
+    color: #053B61;
+    font-weight: 700;
 }
 
 /* ==========================================================================
@@ -1464,17 +1628,41 @@ sup {
         justify-content: center;
     }
 
-    /* Bar Chart */
-    .chart-container {
+    /* Gap Visualization - Mobile */
+    .gap-chart-area {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .y-axis {
+        display: none;
+    }
+
+    .bars-container {
+        flex-direction: row;
+        height: 300px;
+        padding-bottom: 40px;
+    }
+
+    .bar-background {
         height: 250px;
     }
 
-    .bar {
-        width: 60px;
+    .gap-indicator-container {
+        margin: 0 0.5rem;
+        min-width: 80px;
     }
 
-    .gap-indicator {
-        width: 60px;
+    .gap-label-box {
+        padding: 0.75rem 1rem;
+    }
+
+    .gap-text {
+        font-size: 1rem;
+    }
+
+    .gap-vertical-line {
+        height: 40px;
     }
 
     /* Cards */
@@ -1546,6 +1734,15 @@ sup {
     .node,
     .connection {
         animation: none !important;
+    }
+
+    /* Disable gap visualization animations for accessibility */
+    .bar,
+    .gap-bracket-top,
+    .gap-bracket-bottom,
+    .gap-vertical-line,
+    .gap-label-box {
+        transition: none !important;
     }
 }
 

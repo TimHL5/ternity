@@ -183,25 +183,35 @@ function animateStats() {
 }
 
 // =============================================================================
-// Bar Chart Animation
+// Gap Visualization Animation
 // =============================================================================
 
-let barChartAnimated = false;
+let gapAnimated = false;
 
-function animateBarChart() {
-    if (barChartAnimated) return;
+function animateGapVisualization() {
+    if (gapAnimated) return;
 
-    const gapChart = document.querySelector('.gap-visualization');
-    if (!gapChart || !isInViewport(gapChart)) return;
+    const gapSection = document.querySelector('.gap-visualization-container');
+    if (!gapSection || !isInViewport(gapSection)) return;
 
-    barChartAnimated = true;
+    gapAnimated = true;
 
     const bars = document.querySelectorAll('.bar');
-    bars.forEach((bar, index) => {
-        setTimeout(() => {
+    const barsContainer = document.querySelector('.bars-container');
+
+    // Animate bars
+    setTimeout(() => {
+        bars.forEach((bar) => {
+            const finalHeight = bar.getAttribute('data-final-height');
+            bar.style.setProperty('--final-height', finalHeight + '%');
             bar.classList.add('animated');
-        }, index * 300);
-    });
+        });
+
+        // Animate gap indicator
+        if (barsContainer) {
+            barsContainer.classList.add('animated');
+        }
+    }, 300);
 }
 
 // =============================================================================
@@ -365,7 +375,7 @@ function handleMouseMove(e) {
 
 function handleScroll() {
     animateStats();
-    animateBarChart();
+    animateGapVisualization();
     animateTimeline();
     animateCredentials();
     handleFloatingCta();

@@ -160,39 +160,71 @@
                 </div>
 
                 <div class="visual-side">
-                    <div class="gap-visualization">
-                        <div class="gap-chart">
-                            <!-- Y-axis label -->
-                            <div class="y-axis-label">Readiness →</div>
-
+                    <div class="gap-section-wrapper">
+                        <div class="gap-visualization-container">
                             <!-- Chart area -->
-                            <div class="chart-container">
-                                <!-- AI Adoption bar -->
-                                <div class="bar-wrapper">
-                                    <div class="bar ai-adoption-bar" data-height="85">
-                                        <div class="bar-fill"></div>
+                            <div class="gap-chart-area">
+                                <!-- Y-axis -->
+                                <div class="y-axis">
+                                    <div class="y-axis-label">Readiness Level</div>
+                                    <div class="y-axis-markers">
+                                        <span>High</span>
+                                        <span>Medium</span>
+                                        <span>Low</span>
                                     </div>
-                                    <div class="bar-label">AI Adoption</div>
                                 </div>
 
-                                <!-- Gap indicator -->
-                                <div class="gap-indicator">
-                                    <div class="gap-line"></div>
-                                    <div class="gap-label">The Gap</div>
-                                    <div class="gap-arrow">↕</div>
+                                <!-- Chart bars -->
+                                <div class="bars-container">
+                                    <!-- AI Adoption Bar -->
+                                    <div class="bar-group">
+                                        <div class="bar-background">
+                                            <div class="bar ai-adoption-bar" data-final-height="88">
+                                                <div class="bar-inner"></div>
+                                                <div class="bar-value">88%</div>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">AI Adoption</div>
+                                        <div class="bar-sublabel">in schools</div>
+                                    </div>
+
+                                    <!-- Gap Indicator -->
+                                    <div class="gap-indicator-container">
+                                        <div class="gap-bracket-top"></div>
+                                        <div class="gap-vertical-line"></div>
+                                        <div class="gap-label-box">
+                                            <div class="gap-icon">⚠️</div>
+                                            <div class="gap-text">The Gap</div>
+                                            <div class="gap-stat">58% difference</div>
+                                        </div>
+                                        <div class="gap-vertical-line"></div>
+                                        <div class="gap-bracket-bottom"></div>
+                                    </div>
+
+                                    <!-- Teacher Training Bar -->
+                                    <div class="bar-group">
+                                        <div class="bar-background">
+                                            <div class="bar teacher-training-bar" data-final-height="30">
+                                                <div class="bar-inner"></div>
+                                                <div class="bar-value">30%</div>
+                                            </div>
+                                        </div>
+                                        <div class="bar-label">Teacher Training</div>
+                                        <div class="bar-sublabel">readiness</div>
+                                    </div>
                                 </div>
 
-                                <!-- Teacher Training bar -->
-                                <div class="bar-wrapper">
-                                    <div class="bar teacher-training-bar" data-height="30">
-                                        <div class="bar-fill"></div>
-                                    </div>
-                                    <div class="bar-label">Teacher Training</div>
+                                <!-- X-axis -->
+                                <div class="x-axis">
+                                    <div class="x-axis-line"></div>
+                                    <div class="x-axis-label">Time →</div>
                                 </div>
                             </div>
 
-                            <!-- X-axis label -->
-                            <div class="x-axis-label">Time →</div>
+                            <!-- Impact statement -->
+                            <div class="gap-impact-statement">
+                                <strong>The result?</strong> Schools are implementing AI tools without the training to use them safely and effectively.
+                            </div>
                         </div>
                     </div>
                 </div>
