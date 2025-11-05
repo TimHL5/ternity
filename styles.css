@@ -34,13 +34,13 @@ body {
 :root {
     /* Colors */
     --color-white: #FFFFFF;
-    --color-ternity-blue: #7DD3E8;
+    --color-ternity-blue: #87CEEB;
     --color-almost-white: #FAFBFC;
     --color-light-gray: #F3F4F6;
     --color-text-gray: #6B7280;
     --color-dark-gray: #374151;
-    --color-almost-black: #1F2937;
-    --color-blue-accent: #5BC4DE;
+    --color-almost-black: #053B61;
+    --color-blue-accent: #6BB6D9;
     --color-success: #34D399;
     --color-error: #F87171;
 
@@ -75,8 +75,8 @@ body {
     /* Shadows */
     --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
     --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-prominent: 0 10px 30px rgba(125, 211, 232, 0.15);
-    --shadow-hover: 0 20px 40px rgba(125, 211, 232, 0.2);
+    --shadow-prominent: 0 10px 30px rgba(135, 206, 235, 0.15);
+    --shadow-hover: 0 20px 40px rgba(135, 206, 235, 0.2);
 
     /* Border Radius */
     --radius-sm: 8px;
@@ -135,6 +135,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+sup {
+    font-size: 0.7em;
+    vertical-align: super;
+    line-height: 0;
 }
 
 /* ==========================================================================
@@ -782,6 +788,38 @@ h1, h2, h3, h4, h5, h6 {
     line-height: var(--line-height-normal);
 }
 
+.team-member-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #87CEEB 0%, #FFFFFF 100%);
+    color: #053B61;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+.profile-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+    background: linear-gradient(135deg, #6BB6D9 0%, #87CEEB 100%);
+}
+
+.link-icon {
+    width: 18px;
+    height: 18px;
+}
+
 /* ==========================================================================
    Process Timeline Section
    ========================================================================== */
@@ -930,7 +968,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-ternity-blue);
-    box-shadow: 0 0 0 3px rgba(125, 211, 232, 0.1);
+    box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
 }
 
 .form-group input::placeholder,
